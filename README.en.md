@@ -6,7 +6,7 @@
 
 _no installs · no accounts · no fluff · just paste and copy_
 
-[🇧🇷 ler em português](README.md) · [open the app →](index.en.html)
+[🇧🇷 ler em português](README.md) · [open the app →](https://maria-brito15.github.io/file-name-standardizer/index.en.html)
 
 </div>
 
