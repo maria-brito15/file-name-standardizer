@@ -2,11 +2,11 @@
 
 > 🇺🇸 [English version → README.en.md](README.en.md)
 
-A lightweight, zero-dependency web utility that converts messy titles into clean, standardized file names in one click.
+Uma ferramenta web leve e independente que converte títulos desorganizados em nomes de arquivos limpos e padronizados com um único clique.
 
 ---
 
-## Por que isso existe
+## Por Que Isso Existe
 
 Se você já trabalhou com arquivos acadêmicos, projetos de código ou qualquer coisa onde o nome do arquivo importa, sabe a dor: você tem um título como **"Aplicação de Integrais e Transformada de Fourier na Transcrição Automática de Áudio para Partitura"** e precisa transformá-lo em algo que o sistema operacional, o terminal e o Git não vão odiar.
 
@@ -16,7 +16,7 @@ A inspiração veio de ferramentas como o **[Convert Case](https://convertcase.n
 
 ---
 
-## Como usar
+## Como Usar
 
 Sem instalação. Abra `padronizador_nomes.html` direto no navegador.
 
@@ -26,7 +26,7 @@ Abrir padronizador_nomes.html → colar o título → escolher o formato → cop
 
 ---
 
-## Formatos de saída
+## Formatos de Saída
 
 | Formato | Descrição | Exemplo |
 |---|---|---|
@@ -37,7 +37,7 @@ Abrir padronizador_nomes.html → colar o título → escolher o formato → cop
 
 ---
 
-## Opções extras
+## Opções Extras
 
 - **Timestamp** — prefixo com a data atual no formato `YYYYMMDD`
 - **Maiúsculas** — converte toda a saída para caixa alta
@@ -51,7 +51,7 @@ Combinações são livres. Por exemplo, timestamp + hífens + compacta geram:
 
 ---
 
-## Funcionalidades da interface
+## Funcionalidades da Interface
 
 - **Aba "Resultado"** — nome gerado no formato selecionado com botão de copiar
 - **Aba "Todas as versões"** — exibe os 4 formatos simultaneamente, cada um com cópia individual
@@ -61,7 +61,7 @@ Combinações são livres. Por exemplo, timestamp + hífens + compacta geram:
 
 ---
 
-## Arquitetura do código
+## Arquitetura do Código
 
 O JavaScript é organizado em módulos de responsabilidade única (princípio SRP do SOLID), sem dependências externas:
 
@@ -86,7 +86,7 @@ Adicionar um novo formato é tão simples quanto adicionar uma chave ao objeto `
 
 ---
 
-## Estrutura do projeto
+## Estrutura do Projeto
 
 ```
 padronizador_nomes.html     aplicação em português
