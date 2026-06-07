@@ -4,7 +4,7 @@
 
 **turn messy titles into clean file names — instantly.**
 
-_no installs · no accounts · no fluff · just paste and copy_
+*no installs · no accounts · no fluff · just paste and copy*
 
 [🇧🇷 ler em português](README.md) · [open the app →](https://maria-brito15.github.io/file-name-standardizer/index.en.html)
 
@@ -16,11 +16,11 @@ _no installs · no accounts · no fluff · just paste and copy_
 
 you know that moment when you have a perfectly good title like:
 
-> _"Application of Integrals and Fourier Transform in Automatic Audio to Sheet Music Transcription"_
+> *"Application of Integrals and Fourier Transform in Automatic Audio to Sheet Music Transcription"*
 
 and you need it to become a file name your OS, terminal, and Git won't throw a fit about?
 
-doing it by hand is **tedious** — strip the accents, swap spaces for underscores, lowercase everything, inevitably miss something. asking an LLM every single time gets old fast too — open a new tab, type the request, copy the result... for something that should just _be a button_.
+doing it by hand is **tedious** — strip the accents, swap spaces for underscores, lowercase everything, inevitably miss something. asking an LLM every single time gets old fast too — open a new tab, type the request, copy the result... for something that should just *be a button*.
 
 tools like **[Convert Case](https://convertcase.net/)** nail this philosophy: paste, pick, copy, done. no spinner, no signup, no nonsense. this tool does the same thing, but built specifically for file naming.
 
@@ -28,7 +28,16 @@ tools like **[Convert Case](https://convertcase.net/)** nail this philosophy: pa
 
 ## 🚀 usage
 
-open `file_name_standardizer.html` in any browser. that's it.
+**online** — no install needed, just open the link:
+
+> 🔗 [maria-brito15.github.io/file-name-standardizer/index.en.html](https://maria-brito15.github.io/file-name-standardizer/index.en.html)
+
+**locally** — clone the repo and open the file directly in any browser:
+
+```bash
+git clone https://github.com/maria-brito15/file-name-standardizer.git
+# then open index.en.html in your browser
+```
 
 ```
 paste a title  →  pick a format  →  copy  →  done
@@ -38,12 +47,12 @@ paste a title  →  pick a format  →  copy  →  done
 
 ## 🗂️ output formats
 
-| format          | what it does                  | example output                                   |
-| --------------- | ----------------------------- | ------------------------------------------------ |
-| **full**        | every word, nothing left out  | `application_of_integrals_and_fourier_transform` |
-| **shortened**   | drops articles & prepositions | `application_integrals_fourier_transform`        |
-| **compact**     | top 5 keywords only           | `application_integrals_fourier_transform_audio`  |
-| **abbreviated** | first 4 chars of each word    | `appl_inte_four_tran_audi`                       |
+| format | what it does | example output |
+| --- | --- | --- |
+| **full** | every word, nothing left out | `application_of_integrals_and_fourier_transform` |
+| **shortened** | drops articles & prepositions | `application_integrals_fourier_transform` |
+| **compact** | top 5 keywords only | `application_integrals_fourier_transform_audio` |
+| **abbreviated** | first 4 chars of each word | `appl_inte_four_tran_audi` |
 
 ---
 
@@ -101,11 +110,18 @@ JetBrains Mono + Syne  ·  localStorage  ·  zero build step
 ## 📁 project structure
 
 ```
-index.en.html   ← you are here (EN)
-index.html        portuguese version
-README.en.md      this file
-README.md         ortuguese docs
+index.en.html     ← you are here (EN)
+index.html          portuguese version
+interface.png       app screenshot
+README.en.md        this file
+README.md           portuguese docs
 ```
+
+---
+
+## 🖼️ interface
+
+![app interface](interface.png)
 
 ---
 
