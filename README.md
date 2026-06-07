@@ -4,7 +4,7 @@
 
 **transforma títulos bagunçados em nomes de arquivo limpos — na hora.**
 
-_sem instalação · sem cadastro · sem frescura · só colar e copiar_
+*sem instalação · sem cadastro · sem frescura · só colar e copiar*
 
 [🇺🇸 read in english](README.en.md) · [abrir o app →](https://maria-brito15.github.io/file-name-standardizer/index.html)
 
@@ -16,11 +16,11 @@ _sem instalação · sem cadastro · sem frescura · só colar e copiar_
 
 sabe aquele momento em que você tem um título perfeitamente bom como:
 
-> _"Aplicação de Integrais e Transformada de Fourier na Transcrição Automática de Áudio para Partitura"_
+> *"Aplicação de Integrais e Transformada de Fourier na Transcrição Automática de Áudio para Partitura"*
 
 e precisa transformar em algo que o sistema operacional, o terminal e o Git não vão odiar?
 
-fazer na mão é **chato** — remove os acentos, troca os espaços por underscores, coloca tudo em minúsculo, inevitavelmente esquece um `ã`. pedir pra uma LLM toda hora cansa também — abre uma aba nova, digita o pedido, copia o resultado... pra uma coisa que deveria ser _só um botão_.
+fazer na mão é **chato** — remove os acentos, troca os espaços por underscores, coloca tudo em minúsculo, inevitavelmente esquece um `ã`. pedir pra uma LLM toda hora cansa também — abre uma aba nova, digita o pedido, copia o resultado... pra uma coisa que deveria ser *só um botão*.
 
 ferramentas como o **[Convert Case](https://convertcase.net/)** acertam nessa filosofia: cola, escolhe, copia, tchau. sem spinner, sem cadastro, sem enrolação. essa ferramenta faz a mesma coisa, mas construída especificamente para nomear arquivos.
 
@@ -28,7 +28,16 @@ ferramentas como o **[Convert Case](https://convertcase.net/)** acertam nessa fi
 
 ## 🚀 como usar
 
-abra `padronizador_nomes.html` em qualquer navegador. só isso.
+**online** — sem instalar nada, é só abrir o link:
+
+> 🔗 [maria-brito15.github.io/file-name-standardizer/index.html](https://maria-brito15.github.io/file-name-standardizer/index.html)
+
+**localmente** — clone o repositório e abra o arquivo direto no navegador:
+
+```bash
+git clone https://github.com/maria-brito15/file-name-standardizer.git
+# depois abra o index.html no seu navegador
+```
 
 ```
 colar o título  →  escolher o formato  →  copiar  →  pronto
@@ -38,12 +47,12 @@ colar o título  →  escolher o formato  →  copiar  →  pronto
 
 ## 🗂️ formatos de saída
 
-| formato       | o que faz                         | exemplo                                                |
-| ------------- | --------------------------------- | ------------------------------------------------------ |
-| **completa**  | todas as palavras, sem omissões   | `aplicacao_de_integrais_e_transformada_de_fourier`     |
-| **resumida**  | remove artigos e preposições      | `aplicacao_integrais_transformada_fourier`             |
-| **compacta**  | top 5 palavras-chave              | `aplicacao_integrais_transformada_fourier_transcricao` |
-| **abreviada** | primeiros 4 chars de cada palavra | `apli_inte_tran_four_tran`                             |
+| formato | o que faz | exemplo |
+| --- | --- | --- |
+| **completa** | todas as palavras, sem omissões | `aplicacao_de_integrais_e_transformada_de_fourier` |
+| **resumida** | remove artigos e preposições | `aplicacao_integrais_transformada_fourier` |
+| **compacta** | top 5 palavras-chave | `aplicacao_integrais_transformada_fourier_transcricao` |
+| **abreviada** | primeiros 4 chars de cada palavra | `apli_inte_tran_four_tran` |
 
 ---
 
@@ -101,11 +110,18 @@ JetBrains Mono + Syne  ·  localStorage  ·  zero build step
 ## 📁 estrutura do projeto
 
 ```
-index.html         ← você está aqui (PT)
-index.en.html        versão em inglês
-README.md            este arquivo
-README.en.md         docs em inglês
+index.html          ← você está aqui (PT)
+index.en.html         versão em inglês
+interface.png         screenshot do app
+README.md             este arquivo
+README.en.md          docs em inglês
 ```
+
+---
+
+## 🖼️ interface
+
+![interface do app](interface.png)
 
 ---
 
