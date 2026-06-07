@@ -6,7 +6,7 @@ A lightweight, zero-dependency web utility that converts messy titles into clean
 
 ---
 
-## Why this exists
+## Why This Exists
 
 If you've ever worked with academic files, code projects, or anything where the file name actually matters, you know the pain: you have a title like **"Application of Integrals and Fourier Transform in Automatic Audio to Sheet Music Transcription"** and you need to turn it into something that your OS, terminal, and Git won't complain about.
 
