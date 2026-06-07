@@ -1,49 +1,61 @@
-# File Name Standardizer
+<div align="center">
 
-> 🇧🇷 [Versão em português → README.md](README.md)
+# 🌸 File Name Standardizer
 
-A lightweight, zero-dependency web utility that converts messy titles into clean, standardized file names in one click.
+**turn messy titles into clean file names — instantly.**
 
----
+_no installs · no accounts · no fluff · just paste and copy_
 
-## Why This Exists
+[🇧🇷 ler em português](README.md) · [open the app →](index.en.html)
 
-If you've ever worked with academic files, code projects, or anything where the file name actually matters, you know the pain: you have a title like **"Application of Integrals and Fourier Transform in Automatic Audio to Sheet Music Transcription"** and you need to turn it into something that your OS, terminal, and Git won't complain about.
-
-Doing it by hand is tedious — you strip the accents, swap spaces for underscores, lowercase everything, and inevitably miss something. Asking an LLM to do it gets old fast too: open a new window, type the request, copy the result... every single time, for something that should be mechanical.
-
-The inspiration came from tools like **[Convert Case](https://convertcase.net/)** — simple, focused, no fluff. You paste text, pick a format, copy the result. No signup, no ads, no spinner. This tool follows the same philosophy, but aimed specifically at the file naming problem.
+</div>
 
 ---
 
-## Usage
+## ✨ why this exists
 
-No installation. Open `file_name_standardizer.html` directly in any browser.
+you know that moment when you have a perfectly good title like:
+
+> _"Application of Integrals and Fourier Transform in Automatic Audio to Sheet Music Transcription"_
+
+and you need it to become a file name your OS, terminal, and Git won't throw a fit about?
+
+doing it by hand is **tedious** — strip the accents, swap spaces for underscores, lowercase everything, inevitably miss something. asking an LLM every single time gets old fast too — open a new tab, type the request, copy the result... for something that should just _be a button_.
+
+tools like **[Convert Case](https://convertcase.net/)** nail this philosophy: paste, pick, copy, done. no spinner, no signup, no nonsense. this tool does the same thing, but built specifically for file naming.
+
+---
+
+## 🚀 usage
+
+open `file_name_standardizer.html` in any browser. that's it.
 
 ```
-Open file_name_standardizer.html → paste a title → choose a format → copy
+paste a title  →  pick a format  →  copy  →  done
 ```
 
 ---
 
-## Output Formats
+## 🗂️ output formats
 
-| Format | Description | Example |
-|---|---|---|
-| **Full** | All words, nothing omitted | `application_of_integrals_and_fourier_transform` |
-| **Shortened** | Removes articles and prepositions | `application_integrals_fourier_transform` |
-| **Compact** | Up to 5 keywords | `application_integrals_fourier_transform_audio` |
-| **Abbreviated** | First 4 characters of each word | `appl_inte_four_tran_audi` |
+| format          | what it does                  | example output                                   |
+| --------------- | ----------------------------- | ------------------------------------------------ |
+| **full**        | every word, nothing left out  | `application_of_integrals_and_fourier_transform` |
+| **shortened**   | drops articles & prepositions | `application_integrals_fourier_transform`        |
+| **compact**     | top 5 keywords only           | `application_integrals_fourier_transform_audio`  |
+| **abbreviated** | first 4 chars of each word    | `appl_inte_four_tran_audi`                       |
 
 ---
 
-## Extra Options
+## 🎛️ extra options
 
-- **Timestamp** — prefix with today's date in `YYYYMMDD` format
-- **Uppercase** — convert the entire output to uppercase
-- **Hyphens** — use `-` instead of `_` as separator
+mix and match freely:
 
-Options can be freely combined. For example, timestamp + hyphens + compact produces:
+- 🗓️ **timestamp** — prepend today as `YYYYMMDD`
+- 🔠 **uppercase** — shout it if you want
+- **-** **hyphens** — prefer dashes over underscores
+
+example with all three on compact mode:
 
 ```
 20250607-application-integrals-fourier-transform-audio
@@ -51,52 +63,54 @@ Options can be freely combined. For example, timestamp + hyphens + compact produ
 
 ---
 
-## Interface Features
+## 💅 interface features
 
-- **Result tab** — generated name in the selected format with a one-click copy button
-- **All versions tab** — all 4 formats displayed simultaneously, each with its own copy button
-- **History** — last 30 conversions saved in `localStorage`, persisting across sessions
-- **Restore from history** — clicking an entry refills the title and mode in the form
-- **Dark / light theme** — toggle via the fixed button in the top-right corner; preference is saved
-
----
-
-## Code Architecture
-
-The JavaScript is organized into single-responsibility modules (SOLID SRP), with no external dependencies:
-
-```
-TextNormalizer          strips accents and special characters
-StopWords               manages and filters English articles and prepositions
-ConversionStrategies    object holding the 4 conversion strategies (OCP)
-OutputFormatter         applies separator, case, and timestamp to the output
-convert()               orchestrates the pipeline without owning logic
-```
-
-Adding a new format is as simple as adding a key to `ConversionStrategies` — no other code needs to change.
+- **result tab** — your output, ready to copy in one click
+- **all versions tab** — all 4 formats side by side, each copyable
+- **history** — last 30 conversions live in `localStorage` between sessions
+- **restore from history** — click any past entry to bring it back
+- **dark / light theme** — toggle top-right, preference remembered
 
 ---
 
-## Tech Stack
+## 🏗️ code architecture
 
-- HTML5 · CSS3 with custom properties · Vanilla JavaScript ES6+
-- Google Fonts: JetBrains Mono + Syne
-- `localStorage` for history and theme preference persistence
-- Zero external dependencies, zero build step
+vanilla JS, zero dependencies, SOLID principles throughout:
+
+```
+TextNormalizer          strips accents + special characters
+StopWords               filters articles and prepositions (English)
+ConversionStrategies    the 4 strategies as an open/closed object (OCP)
+OutputFormatter         handles separator, case, and timestamp
+convert()               wires the pipeline together, owns no logic
+```
+
+adding a new format = adding one key to `ConversionStrategies`. nothing else changes.
 
 ---
 
-## Project Structure
+## 🛠️ tech stack
 
 ```
-file_name_standardizer.html   English application
-padronizador_nomes.html       Portuguese version
-README.en.md                  this file
-README.md                     Portuguese documentation
+HTML5  ·  CSS3 custom properties  ·  vanilla JS ES6+
+JetBrains Mono + Syne  ·  localStorage  ·  zero build step
 ```
 
 ---
 
-## Browser Compatibility
+## 📁 project structure
 
-Any modern browser with ES6+ and `localStorage` support. No server, no build step, no internet connection required after fonts load.
+```
+index.en.html   ← you are here (EN)
+index.html        portuguese version
+README.en.md      this file
+README.md         ortuguese docs
+```
+
+---
+
+<div align="center">
+
+made with 💙 · runs in any browser · no internet needed after first load
+
+</div>

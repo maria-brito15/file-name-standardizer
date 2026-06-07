@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Padronizador de Nomes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Syne:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button class="theme-toggle" id="themeToggle" title="Alternar tema">
+      <span class="theme-icon" id="themeIcon">☀️</span>
+      <span id="themeLabel">Claro</span>
+    </button>
+
+    <div class="lang-banner">
+      <a class="lang-link" href="index.en.html">🇺🇸 English Version</a>
+    </div>
+
+    <header>
+      <span class="badge">v1.0 · Utilitário</span>
+      <h1>Padronizador<br />de <span>Nomes</span></h1>
+      <p class="tagline">
+        Converta títulos em nomes de arquivo padronizados, sem acentos, sem
+        espaços — prontos para qualquer sistema.
+      </p>
+    </header>
+
+    <div class="card">
+      <div class="card-body">
+        <div>
+          <div class="field-label">Título do arquivo</div>
+          <div class="input-wrap">
+            <textarea
+              id="inputTitle"
+              placeholder="Ex: Aplicação de Integrais e Transformada de Fourier na Transcrição Automática de Áudio para Partitura"
+              spellcheck="false"
+            ></textarea>
+            <span class="char-count" id="charCount">0</span>
+          </div>
+          <div class="error-msg" id="errorMsg">
+            ⚠ Digite um título antes de converter.
+          </div>
+        </div>
+
+        <div>
+          <div class="field-label">Formato de saída</div>
+          <div class="mode-grid" id="modeGrid">
+            <button class="mode-btn active" data-mode="completa">
+              <div class="mode-name">
+                <span class="mode-dot"></span>Completa
+              </div>
+              <div class="mode-desc">Todas as palavras, sem omissões</div>
+            </button>
+            <button class="mode-btn" data-mode="resumida">
+              <div class="mode-name">
+                <span class="mode-dot"></span>Resumida
+              </div>
+              <div class="mode-desc">Remove preposições e artigos</div>
+            </button>
+            <button class="mode-btn" data-mode="compacta">
+              <div class="mode-name">
+                <span class="mode-dot"></span>Compacta
+              </div>
+              <div class="mode-desc">Máximo de 5 palavras-chave</div>
+            </button>
+            <button class="mode-btn" data-mode="abreviada">
+              <div class="mode-name">
+                <span class="mode-dot"></span>Abreviada
+              </div>
+              <div class="mode-desc">Siglas e palavras curtas</div>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <div class="field-label">Opções</div>
+          <div class="options-row">
+            <label class="toggle-wrap">
+              <input type="checkbox" id="optTimestamp" />
+              <span class="toggle"></span>
+              <span class="toggle-label">Adicionar Timestamp</span>
+            </label>
+            <label class="toggle-wrap">
+              <input type="checkbox" id="optUppercase" />
+              <span class="toggle"></span>
+              <span class="toggle-label">Maiúsculas</span>
+            </label>
+            <label class="toggle-wrap">
+              <input type="checkbox" id="optHyphen" />
+              <span class="toggle"></span>
+              <span class="toggle-label">Hífens ao Invés de Underscores</span>
+            </label>
+          </div>
+        </div>
+
+        <button class="convert-btn" id="convertBtn">
+          <span class="btn-icon">⚡</span>
+          Padronizar Nome
+        </button>
+      </div>
+
+      <div class="output-section" id="outputSection">
+        <div class="output-tabs" id="outputTabs">
+          <button class="output-tab active" data-tab="current">
+            Resultado
+          </button>
+          <button class="output-tab" data-tab="all">Todas as versões</button>
+        </div>
+
+        <div id="tabCurrent">
+          <div class="result-row">
+            <div class="result-text" id="resultText"></div>
+            <button class="copy-btn" id="copyBtn" title="Copiar">⧉</button>
+          </div>
+          <div class="stats-bar" id="statsBar"></div>
+        </div>
+
+        <div
+          id="tabAll"
+          style="display: none; flex-direction: column; gap: 10px"
+        ></div>
+      </div>
+    </div>
+
+    <div class="history-section">
+      <div class="history-header">
+        <span class="history-title">Histórico</span>
+        <button class="clear-btn" id="clearHistory">Limpar Tudo</button>
+      </div>
+      <div id="historyContainer">
+        <div class="empty-history" id="emptyHistory">
+          Nenhuma Conversão Ainda.
+        </div>
+        <div class="history-list" id="historyList"></div>
+      </div>
+    </div>
+
+    <footer>
+      Padronizador de Nomes · HTML + CSS + JS · Sem Dependências Externas<br />
+      Desenvolvido por Duda Brito 💙
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

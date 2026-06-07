@@ -1,49 +1,61 @@
-# Padronizador de Nomes de Arquivo
+<div align="center">
 
-> 🇺🇸 [English version → README.en.md](README.en.md)
+# 🌸 Padronizador de Nomes de Arquivo
 
-Uma ferramenta web leve e independente que converte títulos desorganizados em nomes de arquivos limpos e padronizados com um único clique.
+**transforma títulos bagunçados em nomes de arquivo limpos — na hora.**
 
----
+_sem instalação · sem cadastro · sem frescura · só colar e copiar_
 
-## Por Que Isso Existe
+[🇺🇸 read in english](README.en.md) · [abrir o app →](index.html)
 
-Se você já trabalhou com arquivos acadêmicos, projetos de código ou qualquer coisa onde o nome do arquivo importa, sabe a dor: você tem um título como **"Aplicação de Integrais e Transformada de Fourier na Transcrição Automática de Áudio para Partitura"** e precisa transformá-lo em algo que o sistema operacional, o terminal e o Git não vão odiar.
-
-Fazer na mão é chato. Você remove os acentos, troca os espaços por underscores, joga tudo em minúsculo — e inevitavelmente erra alguma coisa ou esquece um `ã`. Pedir pra uma LLM fazer também cansa: abrir uma janela nova, digitar o pedido, copiar o resultado... toda vez a mesma coisa, pra uma tarefa que deveria ser mecânica.
-
-A inspiração veio de ferramentas como o **[Convert Case](https://convertcase.net/)** — simples, diretas, sem frescura. Você cola o texto, escolhe o formato, copia. Sem cadastro, sem anúncio, sem carregamento. Essa ferramenta segue a mesma filosofia, mas focada especificamente no problema de nomear arquivos.
+</div>
 
 ---
 
-## Como Usar
+## ✨ por que isso existe
 
-Sem instalação. Abra `padronizador_nomes.html` direto no navegador.
+sabe aquele momento em que você tem um título perfeitamente bom como:
+
+> _"Aplicação de Integrais e Transformada de Fourier na Transcrição Automática de Áudio para Partitura"_
+
+e precisa transformar em algo que o sistema operacional, o terminal e o Git não vão odiar?
+
+fazer na mão é **chato** — remove os acentos, troca os espaços por underscores, coloca tudo em minúsculo, inevitavelmente esquece um `ã`. pedir pra uma LLM toda hora cansa também — abre uma aba nova, digita o pedido, copia o resultado... pra uma coisa que deveria ser _só um botão_.
+
+ferramentas como o **[Convert Case](https://convertcase.net/)** acertam nessa filosofia: cola, escolhe, copia, tchau. sem spinner, sem cadastro, sem enrolação. essa ferramenta faz a mesma coisa, mas construída especificamente para nomear arquivos.
+
+---
+
+## 🚀 como usar
+
+abra `padronizador_nomes.html` em qualquer navegador. só isso.
 
 ```
-Abrir padronizador_nomes.html → colar o título → escolher o formato → copiar
+colar o título  →  escolher o formato  →  copiar  →  pronto
 ```
 
 ---
 
-## Formatos de Saída
+## 🗂️ formatos de saída
 
-| Formato | Descrição | Exemplo |
-|---|---|---|
-| **Completa** | Todas as palavras, sem omissões | `aplicacao_de_integrais_e_transformada_de_fourier` |
-| **Resumida** | Remove artigos e preposições | `aplicacao_integrais_transformada_fourier` |
-| **Compacta** | Máximo de 5 palavras-chave | `aplicacao_integrais_transformada_fourier_transcricao` |
-| **Abreviada** | Trunca cada palavra a 4 caracteres | `apli_inte_tran_four_tran` |
+| formato       | o que faz                         | exemplo                                                |
+| ------------- | --------------------------------- | ------------------------------------------------------ |
+| **completa**  | todas as palavras, sem omissões   | `aplicacao_de_integrais_e_transformada_de_fourier`     |
+| **resumida**  | remove artigos e preposições      | `aplicacao_integrais_transformada_fourier`             |
+| **compacta**  | top 5 palavras-chave              | `aplicacao_integrais_transformada_fourier_transcricao` |
+| **abreviada** | primeiros 4 chars de cada palavra | `apli_inte_tran_four_tran`                             |
 
 ---
 
-## Opções Extras
+## 🎛️ opções extras
 
-- **Timestamp** — prefixo com a data atual no formato `YYYYMMDD`
-- **Maiúsculas** — converte toda a saída para caixa alta
-- **Hífens** — usa `-` em vez de `_` como separador
+combine à vontade:
 
-Combinações são livres. Por exemplo, timestamp + hífens + compacta geram:
+- 🗓️ **timestamp** — prefixo com a data de hoje `YYYYMMDD`
+- 🔠 **maiúsculas** — grita se quiser
+- **-** **hífens** — prefere traço em vez de underscore
+
+exemplo com tudo junto no modo compacta:
 
 ```
 20250607-aplicacao-integrais-transformada-fourier-transcricao
@@ -51,52 +63,54 @@ Combinações são livres. Por exemplo, timestamp + hífens + compacta geram:
 
 ---
 
-## Funcionalidades da Interface
+## 💅 funcionalidades da interface
 
-- **Aba "Resultado"** — nome gerado no formato selecionado com botão de copiar
-- **Aba "Todas as versões"** — exibe os 4 formatos simultaneamente, cada um com cópia individual
-- **Histórico** — últimas 30 conversões salvas no `localStorage`, persistindo entre sessões
-- **Restaurar do histórico** — clicar em um item preenche o título e o modo de volta no formulário
-- **Tema escuro / claro** — alternável pelo botão fixo no canto superior direito, preferência salva
+- **aba "resultado"** — sua saída, pronta pra copiar em um clique
+- **aba "todas as versões"** — os 4 formatos lado a lado, cada um copiável
+- **histórico** — últimas 30 conversões no `localStorage` entre sessões
+- **restaurar do histórico** — clica em qualquer entrada passada pra recuperar
+- **tema escuro / claro** — toggle no canto superior direito, preferência salva
 
 ---
 
-## Arquitetura do Código
+## 🏗️ arquitetura do código
 
-O JavaScript é organizado em módulos de responsabilidade única (princípio SRP do SOLID), sem dependências externas:
+JS vanilla, zero dependências, princípios SOLID do começo ao fim:
 
 ```
 TextNormalizer          remove acentos e caracteres especiais
-StopWords               gerencia e filtra artigos e preposições em português
-ConversionStrategies    objeto com as 4 estratégias de conversão (OCP)
-OutputFormatter         formata a saída final (separador, caixa, timestamp)
-convert()               orquestra o pipeline sem lógica própria
+StopWords               filtra artigos e preposições (português)
+ConversionStrategies    as 4 estratégias num objeto aberto/fechado (OCP)
+OutputFormatter         cuida do separador, caixa e timestamp
+convert()               conecta o pipeline, não tem lógica própria
 ```
 
-Adicionar um novo formato é tão simples quanto adicionar uma chave ao objeto `ConversionStrategies` — sem tocar no restante do código.
+adicionar um novo formato = adicionar uma chave no `ConversionStrategies`. nada mais muda.
 
 ---
 
-## Tecnologias
-
-- HTML5 · CSS3 com variáveis customizadas · JavaScript ES6+ vanilla
-- Google Fonts: JetBrains Mono + Syne
-- `localStorage` para persistência de histórico e preferência de tema
-- Zero dependências externas, zero build step
-
----
-
-## Estrutura do Projeto
+## 🛠️ tecnologias
 
 ```
-padronizador_nomes.html     aplicação em português
-file_name_standardizer.html aplicação em inglês
-README.md                   esta documentação (PT)
-README.en.md                documentação em inglês
+HTML5  ·  CSS3 com variáveis customizadas  ·  JS ES6+ vanilla
+JetBrains Mono + Syne  ·  localStorage  ·  zero build step
 ```
 
 ---
 
-## Compatibilidade
+## 📁 estrutura do projeto
 
-Qualquer navegador moderno com suporte a ES6+ e `localStorage`. Sem servidor, sem build, sem internet após o carregamento inicial das fontes.
+```
+index.html         ← você está aqui (PT)
+index.en.html        versão em inglês
+README.md            este arquivo
+README.en.md         docs em inglês
+```
+
+---
+
+<div align="center">
+
+feito com 💙 · roda em qualquer navegador · sem internet após o primeiro carregamento
+
+</div>

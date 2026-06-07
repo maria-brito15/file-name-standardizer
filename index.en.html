@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Name Standardizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Syne:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+      <span class="theme-icon" id="themeIcon">☀️</span>
+      <span id="themeLabel">Light</span>
+    </button>
+
+    <div class="lang-banner">
+      <a class="lang-link" href="index.html">🇧🇷 Versão em Português</a>
+    </div>
+
+    <header>
+      <span class="badge">v1.0 · Utility</span>
+      <h1>File Name<br /><span>Standardizer</span></h1>
+      <p class="tagline">
+        Convert titles into standardized file names — no accents, no spaces,
+        ready for any system.
+      </p>
+    </header>
+
+    <div class="card">
+      <div class="card-body">
+        <div>
+          <div class="field-label">File title</div>
+          <div class="input-wrap">
+            <textarea
+              id="inputTitle"
+              placeholder="e.g. Application of Integrals and Fourier Transform in Automatic Audio to Sheet Music Transcription"
+              spellcheck="false"
+            ></textarea>
+            <span class="char-count" id="charCount">0</span>
+          </div>
+          <div class="error-msg" id="errorMsg">
+            ⚠ Please enter a title before converting.
+          </div>
+        </div>
+
+        <div>
+          <div class="field-label">Output format</div>
+          <div class="mode-grid" id="modeGrid">
+            <button class="mode-btn active" data-mode="completa">
+              <div class="mode-name"><span class="mode-dot"></span>Full</div>
+              <div class="mode-desc">All words, nothing omitted</div>
+            </button>
+            <button class="mode-btn" data-mode="resumida">
+              <div class="mode-name">
+                <span class="mode-dot"></span>Shortened
+              </div>
+              <div class="mode-desc">Removes prepositions and articles</div>
+            </button>
+            <button class="mode-btn" data-mode="compacta">
+              <div class="mode-name"><span class="mode-dot"></span>Compact</div>
+              <div class="mode-desc">Up to 5 keywords</div>
+            </button>
+            <button class="mode-btn" data-mode="abreviada">
+              <div class="mode-name">
+                <span class="mode-dot"></span>Abbreviated
+              </div>
+              <div class="mode-desc">Short prefixes per word</div>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <div class="field-label">Options</div>
+          <div class="options-row">
+            <label class="toggle-wrap">
+              <input type="checkbox" id="optTimestamp" />
+              <span class="toggle"></span>
+              <span class="toggle-label">Add Timestamp</span>
+            </label>
+            <label class="toggle-wrap">
+              <input type="checkbox" id="optUppercase" />
+              <span class="toggle"></span>
+              <span class="toggle-label">Uppercase</span>
+            </label>
+            <label class="toggle-wrap">
+              <input type="checkbox" id="optHyphen" />
+              <span class="toggle"></span>
+              <span class="toggle-label">Hyphens Instead of Underscores</span>
+            </label>
+          </div>
+        </div>
+
+        <button class="convert-btn" id="convertBtn">
+          <span class="btn-icon">⚡</span>
+          Standardize Name
+        </button>
+      </div>
+
+      <div class="output-section" id="outputSection">
+        <div class="output-tabs" id="outputTabs">
+          <button class="output-tab active" data-tab="current">Result</button>
+          <button class="output-tab" data-tab="all">All versions</button>
+        </div>
+
+        <div id="tabCurrent">
+          <div class="result-row">
+            <div class="result-text" id="resultText"></div>
+            <button class="copy-btn" id="copyBtn" title="Copy">⧉</button>
+          </div>
+          <div class="stats-bar" id="statsBar"></div>
+        </div>
+
+        <div
+          id="tabAll"
+          style="display: none; flex-direction: column; gap: 10px"
+        ></div>
+      </div>
+    </div>
+
+    <div class="history-section">
+      <div class="history-header">
+        <span class="history-title">History</span>
+        <button class="clear-btn" id="clearHistory">Clear All</button>
+      </div>
+      <div id="historyContainer">
+        <div class="empty-history" id="emptyHistory">No Conversions Yet.</div>
+        <div class="history-list" id="historyList"></div>
+      </div>
+    </div>
+
+    <footer>
+      File Name Standardizer · Pure HTML + CSS + JS · No External
+      Dependencies<br />
+      Developed by Duda Brito 💙
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
