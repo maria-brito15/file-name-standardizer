@@ -175,8 +175,8 @@
   };
 
   function getCurrentLanguage() {
-    const htmlLang = document.documentElement.lang || "en";
-    return htmlLang.startsWith("pt") ? "pt" : "en";
+    const htmlLang = document.documentElement.lang || "pt";
+    return htmlLang.startsWith("en") ? "en" : "pt";
   }
 
   let activeLanguage = getCurrentLanguage();
